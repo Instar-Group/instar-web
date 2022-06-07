@@ -8,3 +8,4 @@ package-lock.json
 /documentation/types.js
 .env
 .svelte-kit
+.vercel

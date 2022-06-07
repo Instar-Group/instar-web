@@ -4,7 +4,12 @@
 <main class="main">
 	<!-- Logo -->
 	<div class="logo">
-		<img src="/static/InstarLogo.svg" alt="logo" height="100" width="100" />
+		<img
+			src="https://raw.githubusercontent.com/Instar-Group/instar-web/41958dc9fdee1fca654f8ff9e0c9732d325ad5af/static/InstarLogo.svg"
+			alt="logo"
+			height="100"
+			width="100"
+		/>
 		<span class="logo-text">Instar</span>
 	</div>
 	<!-- house points -->
