@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'K2D';
+	src: url(/static/fonts/K2D-Regular.ttf);
+}
+
+@layer base {
+	main {
+		@apply bg-slate-600 font-k2d h-screen;
+	}
+}
+
+@layer components {
+	.challengers {
+		@apply bg-[#FF5252] rounded-md text-white text-lg  flex flex-col  items-center justify-center 
+		h-36 w-36
+		scale-[0.7]
+		md:scale-75
+		lg:scale-100 lg:m-2;
+	}
+	.gladiators {
+		@apply bg-[#6BCB77] rounded-md text-white text-lg  flex flex-col items-center justify-center 
+		h-36 w-36
+		scale-[0.7] 
+		md:scale-75
+		lg:scale-100 lg:m-2;
+	}
+	.warriors {
+		@apply bg-[#72AAFC] rounded-md text-white text-lg  flex flex-col  items-center justify-center
+		h-36 w-36
+		scale-[0.7]
+		md:scale-75
+		lg:scale-100 lg:m-2;
+	}
+	.knights {
+		@apply bg-[#FFD93D] rounded-md text-white text-lg  flex flex-col items-center justify-center 
+		h-36 w-36
+		scale-[0.7] 
+		md:scale-75
+		lg:scale-100 lg:m-2;
+	}
+}
