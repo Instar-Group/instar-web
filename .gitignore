@@ -1,7 +1,6 @@
 .DS_Store
 node_modules
 dist
-test-results/
 package-lock.json
 /packages/create-svelte/template/CHANGELOG.md
 /packages/kit/src/packaging/test/watch/package
@@ -10,3 +9,6 @@ package-lock.json
 .svelte-kit
 .vercel
 .vercel_build_output
+.vercel_build_output/functions/node/render/index.js
+.vercel_build_output/static/_app/version.json
+.vercel_build_output/static/_app/immutable/manifest.json
