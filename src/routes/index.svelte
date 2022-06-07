@@ -52,7 +52,7 @@
 <style>
 	.house-points {
 		@apply flex items-center justify-center 
-		flex-col mb-8
+		flex-col mb-2
 		lg:flex-row lg:mt-10 
 		md:flex-row md:mt-7;
 	}
@@ -61,7 +61,7 @@
 	}
 	.logo {
 		@apply flex flex-row 
-		scale-75 
+		scale-[.6]
 		md:scale-100
 		lg:scale-100;
 	}
