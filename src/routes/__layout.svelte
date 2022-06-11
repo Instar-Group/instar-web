@@ -1,9 +1,13 @@
 <script>
-    import "../app.css"
+	import '../app.css';
+	import { isOverlayOpen } from '../stores/OverlayStore';
+	import Overlay from '../components/Overlay.svelte';
 </script>
 
-<div class="">
-    <slot>
-        
-    </slot>
+{#if $isOverlayOpen}
+	<Overlay/>
+{/if}
+
+<div >
+    <slot/>
 </div>
