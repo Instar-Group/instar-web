@@ -1,7 +1,7 @@
 {
 	"name": "instar",
 	"version": "1.0.0",
-	"license": "custom",
+	"license": "mit",
 	"scripts": {
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
