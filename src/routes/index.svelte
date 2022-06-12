@@ -67,7 +67,7 @@
 	.house-points {
 		@apply items-center justify-center 
 		grid grid-cols-2
-		lg:flex-row lg:mt-16 lg:gap-8 
+		lg:flex-row lg:mt-16 lg:flex  
 		md:flex-row md:mt-10  md:gap-7;
 	}
 	.main {
