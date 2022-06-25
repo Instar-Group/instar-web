@@ -51,19 +51,19 @@
 
 <style>
 	.house-points {
-		@apply flex items-center justify-center 
-		flex-col mb-2
-		lg:flex-row lg:mt-10 
-		md:flex-row md:mt-7;
+		@apply items-center justify-center 
+		grid grid-cols-2
+		lg:flex-row lg:mt-16 lg:flex  
+		md:flex-row md:mt-10  md:gap-7;
 	}
 	.main {
-		@apply flex flex-col items-center justify-center;
+		 @apply flex flex-col items-center justify-center relative;
 	}
 	.logo {
 		@apply flex flex-row 
-		scale-[.6]
-		md:scale-100
-		lg:scale-100;
+		scale-[.8] pt-3
+		md:scale-105
+		lg:scale-105;
 	}
 	.logo-text {
 		@apply text-white  text-4xl items-center justify-center flex
