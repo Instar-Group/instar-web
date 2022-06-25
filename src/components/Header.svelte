@@ -1,5 +1,10 @@
 <script>
+import { get } from 'src/routes/auth/logout';
+
     import FaRegUserCircle from 'svelte-icons/fa/FaRegUserCircle.svelte'
+    async function logout(){
+        const response = await get()
+    }
 </script>
 
 <header class="header">
@@ -17,13 +22,13 @@
         <span class="text-white text-3xl">Admin Console</span>
     </div>
     <!-- Admin Profile -->
-    <div class="user-icon"><FaRegUserCircle/></div>
+    <div class="user-icon" on:click={logout}><FaRegUserCircle/></div>
 </header>
 
 
 <style>
     .header{
-        @apply sticky top-0 z-40 p-2 flex flex-row items-center justify-around
+        @apply sticky top-0 z-40 p-2 flex mb-24 flex-row items-center justify-around
     }
     .logo{
         @apply flex items-center

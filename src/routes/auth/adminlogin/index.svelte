@@ -1,8 +1,11 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+
 	import { session } from '$app/stores';
 	import { send } from '../../../lib/api';
 
 	export let error: string;
+	export let success: string;
 
 	async function login(event: SubmitEvent) {
 		const formEl = event.target as HTMLFormElement;
@@ -10,6 +13,9 @@
 
 		if (response.error) {
 			error = response.error;
+		}
+		if (response.success) {
+			success = response.success;
 		}
 
 		$session.user = response.user;
@@ -61,6 +67,14 @@
 			{#if error}
 				<p class="error">{error}</p>
 			{/if}
+			{#if success}
+			<div class="flex flex-col items-center justify-center m-3">
+				<p class="text-green-400">Logged in successfully </p>
+				<p>
+					<a class="underline" href="/adminpage">Go to Admin Console</a>
+				</p>
+			</div>
+			{/if}
 
 			<button
 				class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -87,7 +101,7 @@
 		@apply text-white  text-4xl items-center justify-center flex
 		mx-3;
 	}
-	.error{
-		@apply text-red-600 pb-4 text-center
+	.error {
+		@apply text-red-600 pb-4 text-center;
 	}
 </style>
