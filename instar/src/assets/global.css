@@ -10,7 +10,7 @@
 
 @layer base {
 	main {
-		@apply bg-slate-600 font-k2d h-screen w-screen top-0 left-0
+		@apply bg-slate-600 font-k2d h-screen w-screen 
 
 	}
 }
