@@ -5,5 +5,5 @@
     https://instar.vercel.app
 
 # Development
-After forking the project and installing dependencies using `npm install`  
+After forking the project `cd instar` then  install dependencies using `npm install`  
 use  `npm run dev` for a local preview of the website 
