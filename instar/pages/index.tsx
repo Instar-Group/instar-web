@@ -5,27 +5,27 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div classNameName="">
+    <div className="">
       <Head>
         <title>Instar</title>
         <meta name="description" content="Check house scores with ease" />
         <link rel="icon" href="/favicon.svg" />
       </Head>
 
-      <main classNameName="flex flex-col relative items-center justify-center ">
+      <main className="flex flex-col relative items-center justify-center ">
         {/* LOGO */}
-        <div classNameName="logo">
+        <div className="logo">
           <Image
             src="/images/InstarLogo.svg"
             alt="Picture of the author"
             width={70}
             height={70}
           />
-          <span classNameName="logo-text">Instar</span>
+          <span className="logo-text">Instar</span>
         </div>
 
         {/* House Scores */}
-        <div classNameName="house-points">
+        <div className="house-points">
           {/* Challengers */}
           <div className="challengers">
             <div className="mx-5">
