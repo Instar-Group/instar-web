@@ -24,7 +24,7 @@ a {
 
 @layer base {
 	main {
-		@apply bg-slate-600 font-k2d h-screen w-screen 
+		@apply bg-slate-600 font-k2d w-screen h-screen
 
 	}
 }
@@ -67,14 +67,14 @@ a {
 
 
 	.logo {
-		@apply flex flex-row 
+		@apply flex flex-row  space-x-3
 		scale-[.8] pt-3
 		md:scale-105
 		lg:scale-105;
 	}
 
 	.logo-text {
-		@apply text-white text-4xl items-center justify-center flex mx-3;
+		@apply text-white text-4xl items-center justify-center flex mb-2 ;
 	}
 
 	.text-container {
