@@ -1,0 +1,33 @@
+---
+import Form from "../components/Form.svelte";
+import Login from '../components/Login'
+import {signIn} from '@astro-auth/client'
+---
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="/InstarLogo.svg" />
+    <meta name="viewport" content="width=device-width">
+    <title>Login</title>
+</head>
+
+<main class="bg-slate-600 font-k2d h-screen w-screen space-y-10  flex flex-col items-center justify-center">
+    <div class="space-x-3 flex flex-row">
+        <div>
+            <img src="/images/InstarLogo.svg" alt="logo" height="100" width="100" />
+        </div>
+        <span class="text-white flex items-center text-center justify-center  text-5xl">Instar</span>
+    </div>
+    <div class="bg-slate-500 p-10  rounded-lg shadow-lg">
+        <button onclick={()=>{signIn({
+            callbackURL:"/adminconsole",
+            provider: "github"
+        })}}>
+            Google
+        </button>
+        <button onclick={()=>console.log("wef")}>ww</button>
+    </div>
+</main>
+
+</html>

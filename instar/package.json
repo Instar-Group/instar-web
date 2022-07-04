@@ -24,6 +24,10 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
+    "@astro-auth/client": "^1.0.5",
+    "@astro-auth/core": "^1.0.12",
+    "@astro-auth/providers": "^1.0.6",
+    "@astro-auth/ui": "^1.0.4",
     "@astrojs/tailwind": "^0.2.1",
     "agnostic-svelte": "^1.1.27",
     "astro-icon": "^0.7.1",
