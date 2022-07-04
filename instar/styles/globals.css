@@ -20,6 +20,7 @@ a {
 @font-face {
 	font-family: 'K2D';
 	src: url(/K2D-Regular.ttf);
+	font-display: fallback;
 }
 
 @layer base {
