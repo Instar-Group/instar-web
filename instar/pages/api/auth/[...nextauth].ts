@@ -10,7 +10,7 @@ export default NextAuth({
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      authorize: (credentials) => {
+      authorize: (credentials:any) => {
         if (
           credentials.username === process.env.ADMIN_USERNAME &&
           credentials.password === process.env.ADMIN_PASSWORD
