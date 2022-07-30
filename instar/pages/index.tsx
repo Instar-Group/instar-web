@@ -1,9 +1,55 @@
+import InstarLogo from "components/InstarLogo";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
+import prisma from "./api/prisma";
 
-const Home: NextPage = () => {
+export const getServerSideProps = async () => {
+  const gladiatorsScore = await prisma.gladiators.findUnique({
+    where: {
+      id: "1",
+    },
+    select: {
+      totalScore: true,
+    },
+  });
+  const knightsScore = await prisma.knights.findUnique({
+    where: {
+      id: "2",
+    },
+    select: {
+      totalScore: true,
+    },
+  });
+  const ChallengersScore = await prisma.challengers.findUnique({
+    where: {
+      id: "3",
+    },
+    select: {
+      totalScore: true,
+    },
+  });
+  const warriorsScore = await prisma.warriors.findUnique({
+    where: {
+      id: "4",
+    },
+    select: {
+      totalScore: true,
+    },
+  });
+
+  return {
+    props: { gladiatorsScore, ChallengersScore, knightsScore, warriorsScore },
+  };
+};
+
+const Home: NextPage = ({
+  gladiatorsScore,
+  ChallengersScore,
+  knightsScore,
+  warriorsScore,
+}) => {
   return (
     <div className="">
       <Head>
@@ -14,54 +60,54 @@ const Home: NextPage = () => {
 
       <main className="flex flex-col relative items-center justify-center ">
         {/* LOGO */}
-        <div className="logo">
-          <Image
-            src="/images/InstarLogo.svg"
-            alt="Picture of the author"
-            width={70}
-            height={70}
-          />
-          <span className="logo-text">Instar</span>
-        </div>
+        <InstarLogo />
 
         {/* House Scores */}
         <div className="house-points">
           {/* Challengers */}
-          <div className="challengers">
-            <div className="mx-5">
-              <div className="text-container">
-                <span>Challengers</span>
-                <span>Score : 0</span>
+          <Link href="/challengers/timeline">
+            <div className="challengers cursor-pointer">
+              <div className="mx-5">
+                <div className="text-container">
+                  <span>Challengers</span>
+                  <span>Score : {ChallengersScore.totalScore}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           {/* Gladiators */}
-          <div className="gladiators">
-            <div className="mx-5">
-              <div className=" text-container">
-                <span>Gladiators</span>
-                <span>Score : 0</span>
+          <Link  href="/gladiators/timeline">
+            <div className="gladiators cursor-pointer">
+              <div className="mx-1">
+                <div className=" text-container">
+                  <span>Gladiators</span>
+                  <span>Score : {gladiatorsScore.totalScore}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           {/* Warriors */}
-          <div className="warriors">
-            <div className="mx-5">
-              <div className=" text-container">
-                <span>Warriors</span>
-                <span>Score : 0</span>
+          <Link href="/warriors/timeline">
+            <div className="warriors cursor-pointer">
+              <div className="mx-5">
+                <div className=" text-container">
+                  <span>Warriors</span>
+                  <span>Score : {knightsScore.totalScore}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
           {/* Knights */}
-          <div className="knights">
-            <div className="mx-5">
-              <div className=" text-container">
-                <span>Knights</span>
-                <span>Score : 0</span>
+          <Link href="/knights/timeline">
+            <div className="knights cursor-pointer">
+              <div className="mx-5">
+                <div className=" text-container">
+                  <span>Knights</span>
+                  <span>Score : {warriorsScore.totalScore}</span>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </main>
     </div>

@@ -79,6 +79,6 @@ a {
 	}
 
 	.text-container {
-		@apply flex flex-col items-center justify-center my-10;
+		@apply flex flex-col items-center justify-center my-11;
 	}
 }

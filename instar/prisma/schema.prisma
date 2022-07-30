@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
+}
+
+model newEvent {
+  id            String   @id @default(cuid())
+  houseName     String
+  eventName     String
+  pointsAlloted Int
+  createdAt     DateTime @default(now())
+}
+
+model gladiators {
+  id         String @id @default(cuid())
+  totalScore Int @default(0)
+}
+model knights {
+  id         String @id @default(cuid())
+  totalScore Int @default(0)
+}
+model challengers {
+  id         String @id @default(cuid())
+  totalScore Int @default(0)
+}
+model warriors {
+  id         String @id @default(cuid())
+  totalScore Int @default(0)
+}
