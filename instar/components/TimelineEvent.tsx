@@ -1,7 +1,9 @@
+import { newEvent } from '@prisma/client'
 import React from 'react'
 import { BsDot } from 'react-icons/bs'
 
-export const TimelineEvent = ({content}) => {
+
+export const TimelineEvent = ({content}:{content:newEvent}) => {
   return (
     <div className='flex flex-row items-center space-x-8 '>
         <BsDot size={70}/>
