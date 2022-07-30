@@ -12,7 +12,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 
-const adminconsole: NextPage = () => {
+const Adminconsole: NextPage = () => {
   // code for house selection
   let [house, setHouse] = useState("Challengers");
 
@@ -129,4 +129,4 @@ const adminconsole: NextPage = () => {
   );
 };
 
-export default adminconsole;
+export default Adminconsole;

@@ -5,7 +5,7 @@ import { stringify } from "querystring";
 import { json } from "stream/consumers";
 import prisma from "../prisma";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default  async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not allowed" });
   }
