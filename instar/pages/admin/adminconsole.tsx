@@ -24,7 +24,7 @@ const Adminconsole: NextPage = () => {
     router.push("/auth/adminlogin");
   }
 
-  async function saveEvent(e) {
+  async function saveEvent(e:any) {
     e.preventDefault();
     const houseName = e.target.house.value;
     const eventName = e.target.event.value;
