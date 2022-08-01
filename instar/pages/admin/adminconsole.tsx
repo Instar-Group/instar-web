@@ -18,7 +18,7 @@ const Adminconsole: NextPage = () => {
 
   // Route Protection Code
   const { data: session, status } = useSession();
-  const router = useRouter();
+  const router:any = useRouter();
 
   if (status === "unauthenticated") {
     router.push("/auth/adminlogin");
@@ -26,12 +26,12 @@ const Adminconsole: NextPage = () => {
 
   async function saveEvent(e:any) {
     e.preventDefault();
-    const houseName = e.target.house.value;
-    const eventName = e.target.event.value;
-    const pointsAlloted = parseInt(e.target.points.value);
+    const houseName:any = e.target.house.value;
+    const eventName:any = e.target.event.value;
+    const pointsAlloted:any = parseInt(e.target.points.value);
 
-    const data = { houseName, eventName, pointsAlloted };
-    const response = await fetch("/api/admin", {
+    const data:any = { houseName, eventName, pointsAlloted };
+    const response:any = await fetch("/api/admin", {
       method: "POST",
       body: JSON.stringify(data),
     });

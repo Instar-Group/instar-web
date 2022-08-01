@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import prisma from "./api/prisma";
 
 export const getServerSideProps = async () => {
-  const gladiatorsScore = await prisma.gladiators.findUnique({
+  const gladiatorsScore:any = await prisma.gladiators.findUnique({
     where: {
       id: "1",
     },
@@ -14,7 +14,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const knightsScore = await prisma.knights.findUnique({
+  const knightsScore:any = await prisma.knights.findUnique({
     where: {
       id: "2",
     },
@@ -22,7 +22,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const ChallengersScore = await prisma.challengers.findUnique({
+  const ChallengersScore:any = await prisma.challengers.findUnique({
     where: {
       id: "3",
     },
@@ -30,7 +30,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const warriorsScore = await prisma.warriors.findUnique({
+  const warriorsScore:any = await prisma.warriors.findUnique({
     where: {
       id: "4",
     },

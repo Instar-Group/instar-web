@@ -5,20 +5,20 @@ import { stringify } from "querystring";
 import { json } from "stream/consumers";
 import prisma from "../prisma";
 
-export default  async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method Not allowed" });
   }
 
   var now = null;
 
-  const newEventData = JSON.parse(req.body);
+  const newEventData: any = JSON.parse(req.body);
 
   if (newEventData.houseName === "Gladiators") {
-    const addedPoints = newEventData.pointsAlloted;
+    const addedPoints: any = newEventData.pointsAlloted;
 
     // Updating Total Score of house
-    const updateScore = await prisma.gladiators.update({
+    const updateScore: any = await prisma.gladiators.update({
       data: {
         totalScore: {
           increment: addedPoints,
@@ -32,7 +32,7 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     // Single Event Persistance
     now = moment().format("YYYY-MM-DD");
     // Fetching latest record
-    const latestRecord = await prisma.newEvent.findMany({
+    const latestRecord: any = await prisma.newEvent.findMany({
       where: {
         houseName: "Gladiators",
         eventName: newEventData.eventName,
@@ -41,17 +41,17 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (Object.keys(latestRecord).length !== 0) {
-      const timeOfLatestRecord = latestRecord[0].createdAt;
-      const recordId = latestRecord[0].id;
-      const houseOfLatestRecord = latestRecord[0].houseName;
-      var date = moment(timeOfLatestRecord);
-      var timeComponent = date.utc().format("YYYY-MM-DD");
+      const timeOfLatestRecord: any = latestRecord[0].createdAt;
+      const recordId: any = latestRecord[0].id;
+      const houseOfLatestRecord: any = latestRecord[0].houseName;
+      var date: any = moment(timeOfLatestRecord);
+      var timeComponent: any = date.utc().format("YYYY-MM-DD");
       // Checking if the latest event should be updated or a new event should be created
       if (
         now === timeComponent &&
         houseOfLatestRecord === newEventData.houseName
       ) {
-        const updateEventScore = await prisma.newEvent.update({
+        const updateEventScore: any = await prisma.newEvent.update({
           data: {
             pointsAlloted: {
               increment: addedPoints,
@@ -62,20 +62,20 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
           },
         });
       } else {
-        const savedNewEvent = await prisma.newEvent.create({
+        const savedNewEvent: any = await prisma.newEvent.create({
           data: newEventData,
         });
       }
     } else {
-      const savedNewEvent = await prisma.newEvent.create({
+      const savedNewEvent: any = await prisma.newEvent.create({
         data: newEventData,
       });
     }
   }
   if (newEventData.houseName === "Knights") {
-    const addedPoints = newEventData.pointsAlloted;
+    const addedPoints: any = newEventData.pointsAlloted;
 
-    const updateScore = await prisma.knights.update({
+    const updateScore: any = await prisma.knights.update({
       data: {
         totalScore: {
           increment: addedPoints,
@@ -88,7 +88,7 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     // Single Event Persistance
     now = moment().format("YYYY-MM-DD");
     // Fetching latest record
-    const latestRecord = await prisma.newEvent.findMany({
+    const latestRecord: any = await prisma.newEvent.findMany({
       where: {
         houseName: "Knights",
         eventName: newEventData.eventName,
@@ -97,17 +97,17 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (Object.keys(latestRecord).length !== 0) {
-      const timeOfLatestRecord = latestRecord[0].createdAt;
-      const recordId = latestRecord[0].id;
-      const houseOfLatestRecord = latestRecord[0].houseName;
-      var date = moment(timeOfLatestRecord);
-      var timeComponent = date.utc().format("YYYY-MM-DD");
+      const timeOfLatestRecord: any = latestRecord[0].createdAt;
+      const recordId: any = latestRecord[0].id;
+      const houseOfLatestRecord: any = latestRecord[0].houseName;
+      var date: any = moment(timeOfLatestRecord);
+      var timeComponent: any = date.utc().format("YYYY-MM-DD");
       // Checking if the latest event should be updated or a new event should be created
       if (
         now === timeComponent &&
         houseOfLatestRecord === newEventData.houseName
       ) {
-        const updateEventScore = await prisma.newEvent.update({
+        const updateEventScore: any = await prisma.newEvent.update({
           data: {
             pointsAlloted: {
               increment: addedPoints,
@@ -118,20 +118,20 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
           },
         });
       } else {
-        const savedNewEvent = await prisma.newEvent.create({
+        const savedNewEvent: any = await prisma.newEvent.create({
           data: newEventData,
         });
       }
     } else {
-      const savedNewEvent = await prisma.newEvent.create({
+      const savedNewEvent: any = await prisma.newEvent.create({
         data: newEventData,
       });
     }
   }
   if (newEventData.houseName === "Challengers") {
-    const addedPoints = newEventData.pointsAlloted;
+    const addedPoints: any = newEventData.pointsAlloted;
 
-    const updateScore = await prisma.challengers.update({
+    const updateScore: any = await prisma.challengers.update({
       data: {
         totalScore: {
           increment: addedPoints,
@@ -145,7 +145,7 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     // Single Event Persistance
     now = moment().format("YYYY-MM-DD");
     // Fetching latest record
-    const latestRecord = await prisma.newEvent.findMany({
+    const latestRecord: any = await prisma.newEvent.findMany({
       where: {
         houseName: "Challengers",
         eventName: newEventData.eventName,
@@ -154,17 +154,17 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (Object.keys(latestRecord).length !== 0) {
-      const timeOfLatestRecord = latestRecord[0].createdAt;
-      const recordId = latestRecord[0].id;
-      const houseOfLatestRecord = latestRecord[0].houseName;
-      var date = moment(timeOfLatestRecord);
-      var timeComponent = date.utc().format("YYYY-MM-DD");
+      const timeOfLatestRecord: any = latestRecord[0].createdAt;
+      const recordId: any = latestRecord[0].id;
+      const houseOfLatestRecord: any = latestRecord[0].houseName;
+      var date: any = moment(timeOfLatestRecord);
+      var timeComponent: any = date.utc().format("YYYY-MM-DD");
       // Checking if the latest event should be updated or a new event should be created
       if (
         now === timeComponent &&
         houseOfLatestRecord === newEventData.houseName
       ) {
-        const updateEventScore = await prisma.newEvent.update({
+        const updateEventScore: any = await prisma.newEvent.update({
           data: {
             pointsAlloted: {
               increment: addedPoints,
@@ -175,20 +175,20 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
           },
         });
       } else {
-        const savedNewEvent = await prisma.newEvent.create({
+        const savedNewEvent: any = await prisma.newEvent.create({
           data: newEventData,
         });
       }
     } else {
-      const savedNewEvent = await prisma.newEvent.create({
+      const savedNewEvent: any = await prisma.newEvent.create({
         data: newEventData,
       });
     }
   }
   if (newEventData.houseName === "Warriors") {
-    const addedPoints = newEventData.pointsAlloted;
+    const addedPoints: any = newEventData.pointsAlloted;
 
-    const updateScore = await prisma.warriors.update({
+    const updateScore: any = await prisma.warriors.update({
       data: {
         totalScore: {
           increment: addedPoints,
@@ -202,7 +202,7 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     // Single Event Persistance
     now = moment().format("YYYY-MM-DD");
     // Fetching latest record
-    const latestRecord = await prisma.newEvent.findMany({
+    const latestRecord: any = await prisma.newEvent.findMany({
       where: {
         houseName: "Warriors",
         eventName: newEventData.eventName,
@@ -211,17 +211,17 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     if (Object.keys(latestRecord).length !== 0) {
-      const timeOfLatestRecord = latestRecord[0].createdAt;
-      const recordId = latestRecord[0].id;
-      const houseOfLatestRecord = latestRecord[0].houseName;
-      var date = moment(timeOfLatestRecord);
-      var timeComponent = date.utc().format("YYYY-MM-DD");
+      const timeOfLatestRecord: any = latestRecord[0].createdAt;
+      const recordId: any = latestRecord[0].id;
+      const houseOfLatestRecord: any = latestRecord[0].houseName;
+      var date: any = moment(timeOfLatestRecord);
+      var timeComponent: any = date.utc().format("YYYY-MM-DD");
       // Checking if the latest event should be updated or a new event should be created
       if (
         now === timeComponent &&
         houseOfLatestRecord === newEventData.houseName
       ) {
-        const updateEventScore = await prisma.newEvent.update({
+        const updateEventScore: any = await prisma.newEvent.update({
           data: {
             pointsAlloted: {
               increment: addedPoints,
@@ -232,12 +232,12 @@ export default  async (req: NextApiRequest, res: NextApiResponse) => {
           },
         });
       } else {
-        const savedNewEvent = await prisma.newEvent.create({
+        const savedNewEvent: any = await prisma.newEvent.create({
           data: newEventData,
         });
       }
     } else {
-      const savedNewEvent = await prisma.newEvent.create({
+      const savedNewEvent: any = await prisma.newEvent.create({
         data: newEventData,
       });
     }

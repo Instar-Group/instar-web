@@ -6,8 +6,8 @@ import {  signIn } from "next-auth/react";
 const adminlogin: NextPage = () => {
   const handleSignIn = (e:any) => {
     e.preventDefault();
-    const username = e.target.username.value;
-    const password = e.target.password.value;
+    const username:any = e.target.username.value;
+    const password:any = e.target.password.value;
     signIn("credentials", {
       username: username,
       password: password,

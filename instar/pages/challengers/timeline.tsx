@@ -22,7 +22,7 @@ export const getServerSideProps = async () =>{
       createdAt:true,
     }
   })
-  const fetchedEvents = JSON.stringify(Events)
+  const fetchedEvents:any = JSON.stringify(Events)
   return {
     props: {fetchedEvents}
   }
@@ -30,7 +30,7 @@ export const getServerSideProps = async () =>{
 
 
 const timeline = ({fetchedEvents}) => {
-  const latestEvents = JSON.parse(fetchedEvents)
+  const latestEvents:any = JSON.parse(fetchedEvents)
   return (
     <div>
       <Head>
