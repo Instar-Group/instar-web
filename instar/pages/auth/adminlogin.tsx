@@ -4,7 +4,7 @@ import Image from "next/image";
 import {  signIn } from "next-auth/react";
 
 const adminlogin: NextPage = () => {
-  const handleSignIn = (e) => {
+  const handleSignIn = (e:any) => {
     e.preventDefault();
     const username = e.target.username.value;
     const password = e.target.password.value;
