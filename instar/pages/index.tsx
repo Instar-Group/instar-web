@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 import prisma from "./api/prisma";
 
 export const getServerSideProps = async () => {
-  const gladiatorsScore:any = await prisma.gladiators.findUnique({
+  const gladiatorsScore: any = await prisma.gladiators.findUnique({
     where: {
       id: "1",
     },
@@ -14,7 +14,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const knightsScore:any = await prisma.knights.findUnique({
+  const knightsScore: any = await prisma.knights.findUnique({
     where: {
       id: "2",
     },
@@ -22,7 +22,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const ChallengersScore:any = await prisma.challengers.findUnique({
+  const ChallengersScore: any = await prisma.challengers.findUnique({
     where: {
       id: "3",
     },
@@ -30,7 +30,7 @@ export const getServerSideProps = async () => {
       totalScore: true,
     },
   });
-  const warriorsScore:any = await prisma.warriors.findUnique({
+  const warriorsScore: any = await prisma.warriors.findUnique({
     where: {
       id: "4",
     },
@@ -49,6 +49,11 @@ const Home: NextPage = ({
   ChallengersScore,
   knightsScore,
   warriorsScore,
+}: {
+  gladiatorsScore:any;
+  ChallengersScore:any;
+  knightsScore:any;
+  warriorsScore:any;
 }) => {
   return (
     <div className="">
@@ -76,7 +81,7 @@ const Home: NextPage = ({
             </div>
           </Link>
           {/* Gladiators */}
-          <Link  href="/gladiators/timeline">
+          <Link href="/gladiators/timeline">
             <div className="gladiators cursor-pointer">
               <div className="mx-1">
                 <div className=" text-container">
