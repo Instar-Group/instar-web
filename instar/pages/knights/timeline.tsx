@@ -15,6 +15,7 @@ export const getServerSideProps = async () =>{
     },
     take:-12,
     select:{
+      id:true,
       houseName:true,
       eventName:true,
       pointsAlloted:true,
