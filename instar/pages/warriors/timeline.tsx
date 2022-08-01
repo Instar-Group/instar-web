@@ -9,7 +9,7 @@ import { TimelineEvent } from "components/TimelineEvent";
 
 
 export const getServerSideProps = async () =>{
-  const Events: newEvent = await prisma.newEvent.findMany({
+  const Events: any = await prisma.newEvent.findMany({
     where:{
       houseName: "Warriors"
     },
