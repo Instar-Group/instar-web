@@ -28,7 +28,7 @@ export const getServerSideProps = async () =>{
 }
 
 
-const timeline = ({fetchedEvents}) => {
+const timeline = ({fetchedEvents}:{fetchedEvent:any}) => {
   const latestEvents:any = JSON.parse(fetchedEvents)
   return (
     <div>
