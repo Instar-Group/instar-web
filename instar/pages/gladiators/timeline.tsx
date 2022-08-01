@@ -46,7 +46,7 @@ const timeline = ({fetchedEvents}:{fetchedEvents:any}) => {
               </div>
                 <div className=" text-white text-2xl text-center space-x-8  mt-28 flex flex-row">
                   <div className="flex flex-col space-y-4">
-                    {latestEvents.reverse().map((event, i:number) =>(
+                    {latestEvents.reverse().map((event:any, i:number) =>(
                       <TimelineEvent content={event} key={i} />
                     ))}
                   </div>
