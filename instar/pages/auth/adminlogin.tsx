@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import {  signIn } from "next-auth/react";
 
-const adminlogin: NextPage = ({ csrfToken }) => {
+const adminlogin: NextPage = () => {
   const handleSignIn = (e) => {
     e.preventDefault();
     const username = e.target.username.value;
