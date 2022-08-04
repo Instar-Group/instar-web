@@ -44,7 +44,7 @@ export const getServerSideProps = async () => {
   };
 };
 
-const Home: NextPage = ({  gladiatorsScore, ChallengersScore, knightsScore,  warriorsScore}) => {
+const Home: NextPage = ({  gladiatorsScore, ChallengersScore, knightsScore,  warriorsScore}:{gladiatorsScore:any}) => {
   return (
     <div className="">
       <Head>
