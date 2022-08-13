@@ -88,7 +88,7 @@ const Adminconsole: NextPage = () => {
                 id="event"
               >
                 <option value="Chrysaurus">Chrysaurus</option>
-                <option value="Cricket">Cricket</option>
+                <option value="Cricket">Cricket </option>
                 <option value="Swimming">Swimming</option>
                 <option value="Eco Minions">Eco Minions</option>
                 <option value="Football">Football</option>

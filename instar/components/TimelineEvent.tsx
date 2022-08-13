@@ -10,7 +10,10 @@ export const TimelineEvent = ({content}:{content:newEvent}) => {
         <BsDot size={70}/>
         <span className='mt4'>{eventDate.substring(0, 10)}</span>
         <span className='mt4'>{content.eventName}</span>
-        <span className='mt4'>{content.pointsAlloted}</span>
+        <div className='space-x-2'>
+          <span className='mt4'>{content.pointsAlloted}</span>
+          <span className='mt4'>Points</span>
+        </div>
     </div>
   )
 }
