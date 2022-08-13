@@ -4,7 +4,6 @@ import Image from "next/image";
 import { PrismaClient, newEvent } from "@prisma/client";
 import prisma from "pages/api/prisma";
 import { TimelineEvent } from "components/TimelineEvent";
-import Timeline from "components/Timeline";
 
 export const getServerSideProps = async () => {
   const Events: any = await prisma.newEvent.findMany({
