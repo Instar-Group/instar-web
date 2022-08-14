@@ -33,9 +33,9 @@ const timeline = ({ fetchedEvents }: { fetchedEvents: any }) => {
         <title>Timeline</title>
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <main className="flex items-center flex-col justify-center">
+      <main className="timeline-main">
         <InstarLogo />
-        <div className="flex items-start w-full scale-50 md:scale-75 lg:scale-100 justify-around h-full">
+        <div className="timeline-content">
           {/* Timeline */}
           <div className=" text-white text-2xl text-center space-x-8  mt-28 flex flex-row">
             <div className="flex flex-col space-y-4">
